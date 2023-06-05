@@ -1,25 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.sae201.appController">
-  <top>
-    <HBox>
-      <Label text="QUAKESCOPE" alignment="CENTER"/>
-      <Button fx:id="btnMenuDeroulant"/>
-    </HBox>
-  </top>
-  <left>
+    <top>
+        <HBox alignment="CENTER" style="-fx-background-color: #18534F">
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="QUAKESCOPE" style="-fx-text-fill: #FEEAA1"/>
 
-  </left>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button alignment="CENTER_RIGHT"/>
+        </HBox>
+    </top>
+    <left>
+
+    </left>
 </BorderPane>
