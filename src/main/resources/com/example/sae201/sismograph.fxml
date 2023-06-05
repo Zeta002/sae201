@@ -4,14 +4,23 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.sae201.appController">
     <top>
-        <HBox alignment="CENTER" style="-fx-background-color: #18534F">
+        <HBox alignment="CENTER" style="-fx-background-color: #18534F; -fx-padding: 5 5 5 0">
             <Region HBox.hgrow="ALWAYS"/>
             <Label text="QUAKESCOPE" style="-fx-text-fill: #FEEAA1"/>
-
             <Region HBox.hgrow="ALWAYS"/>
-            <Button alignment="CENTER_RIGHT"/>
+
+            <Button alignment="CENTER_RIGHT" style="-fx-background-color: #18534F">
+                <graphic>
+                    <ImageView fitHeight="15" fitWidth="15">
+                        <Image url="@images/btn-menu-deroulant.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+
         </HBox>
     </top>
     <left>
