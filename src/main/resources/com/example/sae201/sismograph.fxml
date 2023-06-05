@@ -6,16 +6,23 @@
 
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.sae201.appController">
     <top>
-        <HBox alignment="CENTER" style="-fx-background-color: #18534F; -fx-padding: 5 5 5 0">
+        <HBox alignment="CENTER" style="-fx-background-color: #18534F; -fx-padding: 15 0 10 0">
             <Region HBox.hgrow="ALWAYS"/>
-            <Label text="QUAKESCOPE" style="-fx-text-fill: #FEEAA1"/>
+            <Label text="QUAKESCOPE" style="-fx-text-fill: #FEEAA1; -fx-font-size: 17"/>
             <Region HBox.hgrow="ALWAYS"/>
 
             <Button alignment="CENTER_RIGHT" style="-fx-background-color: #18534F">
                 <graphic>
-                    <ImageView fitHeight="15" fitWidth="15">
+                    <ImageView fitHeight="25" fitWidth="25">
                         <Image url="@images/btn-menu-deroulant.png" />
                     </ImageView>
                 </graphic>
@@ -24,6 +31,23 @@
         </HBox>
     </top>
     <left>
-
+        <VBox style="-fx-background-color: #226D68; -fx-padding: 24 0 2 27" prefWidth="180">
+            <Label text="Type" style="-fx-text-fill: #FEEAA1; -fx-font-size: 15"/>
+            <ComboBox fx:id="typeBox" prefWidth="200.0" promptText="choose">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Séismes"/>
+                        <String fx:value="Séismes ressentis en un lieu"/>
+                        <String fx:value="Faux séismes"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Separator/>
+        </VBox>
     </left>
+    <center>
+        <HBox style="-fx-background-color: #226D68">
+
+        </HBox>
+    </center>
 </BorderPane>
