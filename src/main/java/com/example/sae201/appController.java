@@ -28,6 +28,30 @@ public class appController {
     @FXML
     private TextField rayonField;
 
+    @FXML
+    private Slider slider;
+
+    @FXML
+    private TextField firstDateField;
+
+    @FXML
+    private TextField secondDateField;
+
+    @FXML
+    private TextField paysField;
+
+    @FXML
+    private TextField departementField;
+
+    @FXML
+    private TextField latitudeField;
+
+    @FXML
+    private TextField longitudeField;
+
+    @FXML
+    private TextField rayonField;
+
     public appController() {
         this.typeComboBox = new ComboBox<>();
         this.btnMenuDeroulant = new Button();
