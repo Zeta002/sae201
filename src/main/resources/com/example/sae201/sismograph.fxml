@@ -3,26 +3,31 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
-
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Separator?>
+<?import java.net.URL?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Slider?>
+
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.sae201.appController">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+
     <top>
-        <HBox alignment="CENTER" style="-fx-background-color: #18534F; -fx-padding: 15 0 10 0">
+        <HBox alignment="CENTER" styleClass="top-element">
             <Region HBox.hgrow="ALWAYS"/>
-            <Label text="QUAKESCOPE" style="-fx-text-fill: #FEEAA1; -fx-font-size: 17"/>
+            <Label text="QUAKESCOPE" styleClass="title"/>
             <Region HBox.hgrow="ALWAYS"/>
 
-            <Button alignment="CENTER_RIGHT" style="-fx-background-color: #18534F">
+            <Button fx:id="btnMenuDeroulant" alignment="CENTER_RIGHT" style="-fx-background-color: #18534F">
                 <graphic>
-                    <ImageView fitHeight="25" fitWidth="25">
+                    <ImageView fitHeight="35" fitWidth="35">
                         <Image url="@images/btn-menu-deroulant.png" />
                     </ImageView>
                 </graphic>
@@ -30,10 +35,11 @@
 
         </HBox>
     </top>
+
     <left>
-        <VBox style="-fx-background-color: #226D68; -fx-padding: 24 0 2 27" prefWidth="180">
-            <Label text="Type" style="-fx-text-fill: #FEEAA1; -fx-font-size: 15"/>
-            <ComboBox fx:id="typeBox" prefWidth="200.0" promptText="choose">
+        <VBox styleClass="left-element, left-vbox" prefWidth="575">
+            <Label text="Type" styleClass="left-label"/>
+            <ComboBox fx:id="typeComboBox" prefWidth="200.0" promptText="Séismes" styleClass="left-element">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="Séismes"/>
@@ -43,11 +49,57 @@
                 </items>
             </ComboBox>
             <Separator/>
+
+            <Label text="Date" styleClass="left-label"/>
+            <HBox styleClass="left-element">
+                <VBox>
+                    <TextField styleClass="left-element" fx:id="firstDateField" text="De"/>
+                    <Separator/>
+                </VBox>
+                <VBox>
+                    <TextField styleClass="left-element" fx:id="secondDateField" text="A"/>
+                    <Separator/>
+                </VBox>
+            </HBox>
+
+            <Label text="Localisation" styleClass="left-label"/>
+            <HBox>
+                <VBox>
+                    <TextField styleClass="left-element" fx:id="paysField" text="Pays"/>
+                    <Separator/>
+                </VBox>
+                <VBox>
+                    <TextField styleClass="left-element" fx:id="departementField" text="Département"/>
+                    <Separator/>
+                </VBox>
+            </HBox>
+
+            <Label text="Localisation" styleClass="left-label"/>
+            <HBox>
+                <VBox>
+                    <TextField styleClass="left-element" fx:id="latitudeField" text="Latitude"/>
+                    <Separator/>
+                </VBox>
+                <VBox>
+                    <TextField styleClass="left-element" fx:id="longitudeField" text="Longitude"/>
+                    <Separator/>
+                </VBox>
+                <VBox>
+                    <TextField styleClass="left-element" fx:id="rayonField" text="Rayon"/>
+                    <Separator/>
+                </VBox>
+            </HBox>
+
+            <Label text="Intensité macrosismique" styleClass="left-label"/>
+            <Slider fx:id="slider" showTickLabels="true" max="12"/>
+
         </VBox>
     </left>
+
     <center>
-        <HBox style="-fx-background-color: #226D68">
+        <HBox styleClass="left-element">
 
         </HBox>
     </center>
+
 </BorderPane>

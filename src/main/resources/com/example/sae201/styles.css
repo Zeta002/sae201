@@ -1,0 +1,38 @@
+.title {
+    -fx-background-color: #18534F;
+    -fx-padding: 15 0 10 0;
+    -fx-font-size: 25;
+    -fx-font-family: Lato;
+    -fx-text-fill: #FEEAA1;
+}
+
+.top-element {
+    -fx-background-color: #18534F;
+}
+
+.left-label {
+    -fx-padding: 90 0 0 0;
+    -fx-text-fill: #FEEAA1;
+    -fx-font-size: 23;
+    -fx-font-family: Lato;
+}
+
+.left-element {
+    -fx-background-color: #226D68;
+    -fx-font-size: 17;
+    -fx-text-fill: #FFFFFF;
+}
+
+/*.combo-box .text-field {*/
+/*    -fx-prompt-text-fill: #FFFFFF; !* Couleur du texte du prompt *!*/
+/*    -fx-prompt-text-font: 17px "Lato"; !* Police du texte du prompt *!*/
+/*    !* Autres propriétés de style *!*/
+/*}*/
+
+.left-vbox {
+    -fx-padding: 0 50 50 100;
+}
+
+.separator {
+    -fx-color-label-visible: #D6955B;
+}
