@@ -48,58 +48,85 @@
                     </FXCollections>
                 </items>
             </ComboBox>
-            <Separator/>
+            <HBox styleClass="separator">
+                <Label styleClass="label-invisible" text="fill"/>
+            </HBox>
 
-            <Label text="Date" styleClass="left-label"/>
+            <Label styleClass="left-label" text="Date"/>
             <HBox styleClass="left-element">
                 <VBox>
                     <TextField styleClass="left-element" fx:id="firstDateField" text="De"/>
-                    <Separator/>
+                    <HBox styleClass="separator">
+                        <Label styleClass="label-invisible" text="fill"/>
+                    </HBox>
                 </VBox>
                 <VBox>
                     <TextField styleClass="left-element" fx:id="secondDateField" text="A"/>
-                    <Separator/>
+                    <HBox styleClass="separator">
+                        <Label styleClass="label-invisible" text="fill"/>
+                    </HBox>
                 </VBox>
             </HBox>
 
             <Label text="Localisation" styleClass="left-label"/>
-            <HBox>
+            <HBox styleClass="left-element">
                 <VBox>
                     <TextField styleClass="left-element" fx:id="paysField" text="Pays"/>
-                    <Separator/>
+                    <HBox styleClass="separator">
+                        <Label styleClass="label-invisible" text="fill"/>
+                    </HBox>
                 </VBox>
                 <VBox>
                     <TextField styleClass="left-element" fx:id="departementField" text="Département"/>
-                    <Separator/>
+                    <HBox styleClass="separator">
+                        <Label styleClass="label-invisible" text="fill"/>
+                    </HBox>
                 </VBox>
             </HBox>
 
             <Label text="Localisation" styleClass="left-label"/>
-            <HBox>
+            <HBox styleClass="left-element">
                 <VBox>
                     <TextField styleClass="left-element" fx:id="latitudeField" text="Latitude"/>
-                    <Separator/>
+                    <HBox styleClass="separator">
+                        <Label styleClass="label-invisible" text="fill"/>
+                    </HBox>
                 </VBox>
                 <VBox>
                     <TextField styleClass="left-element" fx:id="longitudeField" text="Longitude"/>
-                    <Separator/>
+                    <HBox styleClass="separator">
+                        <Label styleClass="label-invisible" text="fill"/>
+                    </HBox>
                 </VBox>
                 <VBox>
                     <TextField styleClass="left-element" fx:id="rayonField" text="Rayon"/>
-                    <Separator/>
+                    <HBox styleClass="separator">
+                        <Label styleClass="label-invisible" text="fill"/>
+                    </HBox>
                 </VBox>
             </HBox>
 
-            <Label text="Intensité macrosismique" styleClass="left-label"/>
+            <Label styleClass="left-label" text="Intensité macrosismique"/>
             <Slider fx:id="slider" showTickLabels="true" max="12"/>
 
         </VBox>
     </left>
 
-    <center>
-        <HBox styleClass="left-element">
-
+    <right>
+        <HBox fx:id="menuDeroulant" styleClass="left-element">
+            <VBox styleClass="right-menu" prefWidth="400">
+                <Button styleClass="right-menu-button" text="Page d'accueil"/>
+                <Button styleClass="right-menu-button" text="Dashboard"/>
+                <Button styleClass="right-menu-button" text="SismoGraph"/>
+            </VBox>
         </HBox>
+    </right>
+
+
+    <center>
+        <VBox styleClass="left-element">
+
+        </VBox>
     </center>
 
 </BorderPane>

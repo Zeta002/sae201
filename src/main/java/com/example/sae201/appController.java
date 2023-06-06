@@ -1,16 +1,22 @@
 package com.example.sae201;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 
 public class appController {
     @FXML
     private ComboBox typeComboBox;
     @FXML
     private Button btnMenuDeroulant;
+    @FXML
+    private HBox menuDeroulant;
     @FXML
     private Slider slider;
     @FXML
@@ -28,6 +34,8 @@ public class appController {
     @FXML
     private TextField rayonField;
 
+    boolean menuVisibility = false;
+
     public appController() {
         this.typeComboBox = new ComboBox<>();
         this.btnMenuDeroulant = new Button();
@@ -38,6 +46,14 @@ public class appController {
         this.latitudeField = new TextField();
         this.paysField = new TextField();
         this.rayonField = new TextField();
+    }
+
+    public void initialize() {
+        createBindings();
+    }
+
+    private void createBindings() {
+
     }
 }
 

@@ -11,7 +11,7 @@
 }
 
 .left-label {
-    -fx-padding: 90 0 0 0;
+    -fx-padding: 65 0 0 0;
     -fx-text-fill: #FEEAA1;
     -fx-font-size: 23;
     -fx-font-family: Lato;
@@ -21,18 +21,45 @@
     -fx-background-color: #226D68;
     -fx-font-size: 17;
     -fx-text-fill: #FFFFFF;
+    -fx-spacing: 10;
+    -fx-pref-width: 600;
 }
-
-/*.combo-box .text-field {*/
-/*    -fx-prompt-text-fill: #FFFFFF; !* Couleur du texte du prompt *!*/
-/*    -fx-prompt-text-font: 17px "Lato"; !* Police du texte du prompt *!*/
-/*    !* Autres propriétés de style *!*/
-/*}*/
 
 .left-vbox {
     -fx-padding: 0 50 50 100;
 }
 
 .separator {
-    -fx-color-label-visible: #D6955B;
+    -fx-background-color: #D6955B;
+}
+
+.label-invisible {
+    visibility: false;
+    -fx-font-size: 2;
+}
+
+.right-menu {
+    -fx-spacing: 150;
+    -fx-alignment: center;
+    -fx-background-color: #226D68;
+}
+
+.right-menu-button {
+    -fx-font-size: 20;
+    -fx-background-color: #226D68;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #FEEAA1;
+    -fx-border-width: 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-alignment: center;
+}
+
+.right-menu-button:hover {
+    -fx-border-color: #D6955B;
+}
+
+.right-menu-button:pressed {
+    -fx-background-color: #18534F;
+    -fx-border-color: #D6955B;
 }

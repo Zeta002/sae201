@@ -11,7 +11,7 @@ public class sismograph extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(sismograph.class.getResource("sismograph.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1920, 1080);
+        Scene scene = new Scene(fxmlLoader.load(), 1250, 900);
         stage.setTitle("SismoGraph");
         stage.setScene(scene);
         stage.show();
