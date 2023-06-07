@@ -5,7 +5,9 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 /**
  * Contrôle l'application dans son ensemble. Récupère les événements de la vue et les données triées du modèle
@@ -13,9 +15,13 @@ import javafx.scene.layout.HBox;
  */
 public class AppController {
     @FXML
+    private BorderPane root;
+    @FXML
     private ToggleButton btnMenuDeroulant;
     @FXML
-    private HBox menuDeroulant;
+    private VBox menuDeroulant;
+
+    private boolean menuVisibility = true;
 
     private final SimpleBooleanProperty menuVisible = new SimpleBooleanProperty(false);
 
@@ -36,12 +42,20 @@ public class AppController {
             // Effectue l'action en fonction de l'ID du bouton
             switch (id) {
 
-                case "btnMenuDeroulant" -> showMenu();
                 case "btnPageAccueil" -> switchToAccueil();
                 case "btnDashboard" -> switchToDashboard();
                 case "btnSismograph" -> reloadCurrentPage();
 
                 // Ajoute d'autres cas pour d'autres éléments si nécessaire
+            }
+        }
+
+        if (sourceOfEvent instanceof ToggleButton toggleButton) {
+            String id = toggleButton.getId();
+
+            switch (id) {
+
+                case "btnMenuDeroulant" -> showMenu();
             }
         }
     }
@@ -50,6 +64,7 @@ public class AppController {
      * Initialise ce qui doit être lancé au chargement de la classe.
      */
     public void initialize() {
+        showMenu();
         createBindings();
     }
 
@@ -57,16 +72,42 @@ public class AppController {
      * Crée les bindings nécessaires pour le bon fonctionnement de l'application.
      */
     private void createBindings() {
-        // Binding de la visibilité du menu déroulant
-        BooleanBinding menuVisibleBinding = btnMenuDeroulant.selectedProperty().not();
-        menuDeroulant.visibleProperty().bind(menuVisibleBinding);
     }
+
+/*
+  ______ _    _ _   _  _____ _______ _____ ____  _   _
+ |  ____| |  | | \ | |/ ____|__   __|_   _/ __ \| \ | |
+ | |__  | |  | |  \| | |       | |    | || |  | |  \| |
+ |  __| | |  | | . ` | |       | |    | || |  | | . ` |
+ | |    | |__| | |\  | |____   | |   _| || |__| | |\  |
+ |_|     \____/|_| \_|\_____|  |_|  |_____\____/|_| \_|
+                                                        */
 
     /**
      * Affiche le menu déroulant qui sert de barre de navigation.
      */
     private void showMenu() {
-        menuDeroulant.setVisible(true);
+        menuVisibility = !menuVisibility;
+
+        // Rend le menu "inexistant" et invisible
+        menuDeroulant.setManaged(menuVisibility);
+        menuDeroulant.setVisible(menuVisibility);
+
+        // Assombrir l'arrière plan quand le menu est visible
+        if (menuVisibility) {
+            backgroundDarkening(true);
+        } else {
+            backgroundDarkening(false);
+            menuDeroulant.setPrefWidth(0.0);
+        }
+    }
+
+    /**
+     * Si le booléen est vrai, le background est assombifié
+     * @param b : boolean
+     */
+    private void backgroundDarkening(boolean b) {
+        root.setStyle(b ? "-fx-background-color: rgba(0, 0, 0, 0.3);" : "-fx-background-color: null;");
     }
 
     /**

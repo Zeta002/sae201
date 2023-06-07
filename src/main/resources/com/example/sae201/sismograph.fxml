@@ -9,13 +9,13 @@
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Separator?>
 <?import java.net.URL?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Slider?>
-
 <?import javafx.scene.control.ToggleButton?>
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.sae201.AppController">
+
+<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.sae201.AppController">
+
     <stylesheets>
         <URL value="@styles.css"/>
     </stylesheets>
@@ -26,7 +26,7 @@
             <Label text="QUAKESCOPE" styleClass="title"/>
             <Region HBox.hgrow="ALWAYS"/>
 
-            <ToggleButton fx:id="btnMenuDeroulant" styleClass="top-element" alignment="CENTER_RIGHT">
+            <ToggleButton fx:id="btnMenuDeroulant" onAction="#handleEventHandler" styleClass="top-element" alignment="CENTER_RIGHT">
                 <graphic>
                     <ImageView fitHeight="35" fitWidth="35">
                         <Image url="@images/btn-menu-deroulant.png"/>
@@ -114,19 +114,17 @@
     </left>
 
     <right>
-        <HBox fx:id="menuDeroulant" styleClass="left-element" visible="false">
-            <VBox styleClass="right-menu" prefWidth="200">
-                <Button styleClass="right-menu-button" text="Page d'accueil"/>
-                <Button styleClass="right-menu-button" text="Dashboard"/>
-                <Button styleClass="right-menu-button" text="SismoGraph"/>
-            </VBox>
-        </HBox>
+        <VBox fx:id="menuDeroulant" styleClass="right-menu">
+            <Button styleClass="right-menu-button" text="ACCUEIL"/>
+            <Button styleClass="right-menu-button" text="STATISTIQUES"/>
+            <Button styleClass="right-menu-button" text="CARTE"/>
+        </VBox>
     </right>
 
 
     <center>
-        <VBox styleClass="left-element">
-
+        <VBox styleClass="center-element">
+            <Label styleClass="center-element" text="LE CENTRE"/>
         </VBox>
     </center>
 
