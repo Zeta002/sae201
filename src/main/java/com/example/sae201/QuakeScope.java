@@ -7,10 +7,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class sismograph extends Application {
+/**
+ * Classe principale de l'application. Charge le fichier FXML, initialise la scène et l'affiche dans le stage.
+ */
+public class QuakeScope extends Application {
+
+    /**
+     * Méthode principale qui charge le fichier FXML, initialise le stage et y place la scène à l'intérieur.
+     *
+     * @param stage : la fenêtre de l'application
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(sismograph.class.getResource("sismograph.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(QuakeScope.class.getResource("sismograph.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1250, 900);
         stage.setTitle("SismoGraph");
         stage.setScene(scene);

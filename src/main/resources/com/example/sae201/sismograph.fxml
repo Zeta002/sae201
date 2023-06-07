@@ -14,7 +14,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Slider?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.sae201.appController">
+<?import javafx.scene.control.ToggleButton?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.sae201.AppController">
     <stylesheets>
         <URL value="@styles.css"/>
     </stylesheets>
@@ -25,20 +26,20 @@
             <Label text="QUAKESCOPE" styleClass="title"/>
             <Region HBox.hgrow="ALWAYS"/>
 
-            <Button fx:id="btnMenuDeroulant" alignment="CENTER_RIGHT" style="-fx-background-color: #18534F">
+            <ToggleButton fx:id="btnMenuDeroulant" styleClass="top-element" alignment="CENTER_RIGHT">
                 <graphic>
                     <ImageView fitHeight="35" fitWidth="35">
-                        <Image url="@images/btn-menu-deroulant.png" />
+                        <Image url="@images/btn-menu-deroulant.png"/>
                     </ImageView>
                 </graphic>
-            </Button>
+            </ToggleButton>
 
         </HBox>
     </top>
 
     <left>
         <VBox styleClass="left-element, left-vbox" prefWidth="575">
-            <Label text="Type" styleClass="left-label"/>
+            <Label styleClass="left-label" text="Type"/>
             <ComboBox fx:id="typeComboBox" prefWidth="200.0" promptText="Séismes" styleClass="left-element">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
@@ -113,8 +114,8 @@
     </left>
 
     <right>
-        <HBox fx:id="menuDeroulant" styleClass="left-element">
-            <VBox styleClass="right-menu" prefWidth="400">
+        <HBox fx:id="menuDeroulant" styleClass="left-element" visible="false">
+            <VBox styleClass="right-menu" prefWidth="200">
                 <Button styleClass="right-menu-button" text="Page d'accueil"/>
                 <Button styleClass="right-menu-button" text="Dashboard"/>
                 <Button styleClass="right-menu-button" text="SismoGraph"/>
