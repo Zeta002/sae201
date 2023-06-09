@@ -1,13 +1,13 @@
 package com.example.sae201;
 
-import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+
+import java.util.ArrayList;
 
 /**
  * Contrôle l'application dans son ensemble. Récupère les événements de la vue et les données triées du modèle
@@ -20,10 +20,12 @@ public class AppController {
     private ToggleButton btnMenuDeroulant;
     @FXML
     private VBox menuDeroulant;
+    @FXML
+    private ComboBox departement;
 
     private boolean menuVisibility = true;
 
-    private final SimpleBooleanProperty menuVisible = new SimpleBooleanProperty(false);
+    private ArrayList<String> departementList = new ArrayList<>();
 
     /**
      * Gestionnaire d'événement du contrôleur, appelle la fonction associée à l'événement demandé.
@@ -42,9 +44,9 @@ public class AppController {
             // Effectue l'action en fonction de l'ID du bouton
             switch (id) {
 
-                case "btnPageAccueil" -> switchToAccueil();
-                case "btnDashboard" -> switchToDashboard();
-                case "btnSismograph" -> reloadCurrentPage();
+                case "btnAcceuil" -> switchToAccueil();
+                case "btnSismograph" -> switchToDashboard();
+                case "btnQuakescope" -> reloadCurrentPage();
 
                 // Ajoute d'autres cas pour d'autres éléments si nécessaire
             }
@@ -82,7 +84,6 @@ public class AppController {
  | |    | |__| | |\  | |____   | |   _| || |__| | |\  |
  |_|     \____/|_| \_|\_____|  |_|  |_____\____/|_| \_|
                                                         */
-
     /**
      * Affiche le menu déroulant qui sert de barre de navigation.
      */
