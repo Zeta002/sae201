@@ -30,18 +30,17 @@
     -fx-spacing: 100;
     -fx-alignment: center;
     -fx-background-color: #226D68;
-    -fx-padding: 0 0 0 25;
+    -fx-padding: 0 150 0 150;
 }
 
 .right-menu-button {
     -fx-font-size: 20;
     -fx-background-color: #226D68;
-    -fx-text-fill: #ffffff;
-    /*-fx-border-color: #FEEAA1;*/
-    /*-fx-border-width: 2px;*/
+    -fx-text-fill: #ECF8F6;
     -fx-border-radius: 15px;
     -fx-background-radius: 15px;
     -fx-alignment: center;
+    -fx-min-width: 200;
 }
 
 .right-menu-button:hover {
@@ -66,13 +65,13 @@
 .left-element {
     -fx-background-color: #226D68;
     -fx-font-size: 17;
-    -fx-text-fill: #FFFFFF;
-    -fx-spacing: 10;
+    -fx-text-fill: #ECF8F6;
+    -fx-spacing: 40;
     -fx-pref-width: 600;
 }
 
-.left-vbox {
-    -fx-padding: 0 50 50 100;
+.left-container {
+    -fx-padding: 0 50 50 50;
 }
 
 /*////////////////*/

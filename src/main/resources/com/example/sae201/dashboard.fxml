@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.sae201.EarthquakeDashboardController">
+    <top>
+        <HBox style="-fx-background-color: #226D68;" prefHeight="50"/>
+    </top>
+    <center>
+        <VBox VBox.vgrow="ALWAYS">
+            <HBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                <PieChart fx:id="graphique" prefHeight="200.0" prefWidth="200.0" title="Répartition des magnitudes" HBox.hgrow="ALWAYS"/>
+                <VBox fx:id="tableauContainer" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                    <Slider fx:id="filtreMagnitudeSlider" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" value="5.0" />
+                    <TableView fx:id="tableau" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colonneRegion" prefWidth="75.0" text="Région" />
+                            <TableColumn fx:id="colonneLatitude" prefWidth="75.0" text="Latitude" />
+                            <TableColumn fx:id="colonneLongitude" prefWidth="75.0" text="Longitude" />
+                            <TableColumn fx:id="colonneMagnitude" prefWidth="75.0" text="Magnitude" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </HBox>
+            <BarChart fx:id="graphiqueRegions" prefHeight="500.0" prefWidth="200.0" title="Proportion des régions avec des séismes">
+                <xAxis>
+                    <CategoryAxis fx:id="xAxis" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="yAxis" />
+                </yAxis>
+            </BarChart>
+        </VBox>
+    </center>
+</BorderPane>

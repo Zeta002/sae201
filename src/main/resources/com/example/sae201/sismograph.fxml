@@ -38,31 +38,18 @@
     </top>
 
     <left>
-        <VBox styleClass="left-element, left-vbox" prefWidth="575">
-            <Label styleClass="left-label" text="Type"/>
-            <ComboBox fx:id="typeComboBox" prefWidth="200.0" promptText="Séismes" styleClass="left-element">
-                <items>
-                    <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="Séismes"/>
-                        <String fx:value="Séismes ressentis en un lieu"/>
-                        <String fx:value="Faux séismes"/>
-                    </FXCollections>
-                </items>
-            </ComboBox>
-            <HBox styleClass="separator">
-                <Label styleClass="label-invisible" text="fill"/>
-            </HBox>
+        <VBox styleClass="left-element, left-container" prefWidth="575">
 
             <Label styleClass="left-label" text="Date"/>
             <HBox styleClass="left-element">
                 <VBox>
-                    <TextField styleClass="left-element" fx:id="firstDateField" text="De"/>
+                    <TextField styleClass="left-element" fx:id="firstDateField" text="Après"/>
                     <HBox styleClass="separator">
                         <Label styleClass="label-invisible" text="fill"/>
                     </HBox>
                 </VBox>
                 <VBox>
-                    <TextField styleClass="left-element" fx:id="secondDateField" text="A"/>
+                    <TextField styleClass="left-element" fx:id="secondDateField" text="Avant"/>
                     <HBox styleClass="separator">
                         <Label styleClass="label-invisible" text="fill"/>
                     </HBox>
@@ -72,13 +59,59 @@
             <Label text="Localisation" styleClass="left-label"/>
             <HBox styleClass="left-element">
                 <VBox>
-                    <TextField styleClass="left-element" fx:id="paysField" text="Pays"/>
-                    <HBox styleClass="separator">
-                        <Label styleClass="label-invisible" text="fill"/>
-                    </HBox>
-                </VBox>
-                <VBox>
-                    <TextField styleClass="left-element" fx:id="departementField" text="Département"/>
+                    <ComboBox fx:id="departement" styleClass="left-element" promptText="Département">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="ALPES DAUPHINOISES"/>
+                                <String fx:value="ALPES MARITIMES"/>
+                                <String fx:value="ALPES PROVENCALES"/>
+                                <String fx:value="ALPES SAVOYARDES"/>
+                                <String fx:value="ALSACE"/>
+                                <String fx:value="ANJOU"/>
+                                <String fx:value="ARDENNE"/>
+                                <String fx:value="AQUITAINE"/>
+                                <String fx:value="AUVERGNE"/>
+                                <String fx:value="BERRY"/>
+                                <String fx:value="BOURBONNAIS"/>
+                                <String fx:value="BOURGOGNE"/>
+                                <String fx:value="BRETAGNE"/>
+                                <String fx:value="BRESSE ET JURA BRESSAN"/>
+                                <String fx:value="CEVENNES"/>
+                                <String fx:value="CHAMPAGNE"/>
+                                <String fx:value="CHARENTES"/>
+                                <String fx:value="CORSE"/>
+                                <String fx:value="DAUPHINE"/>
+                                <String fx:value="ESPAGNE"/>
+                                <String fx:value="FLANDRE-ARTOIS"/>
+                                <String fx:value="FOREZ-LYONNAIS"/>
+                                <String fx:value="FRANCHE-COMTE"/>
+                                <String fx:value="GASCOGNE"/>
+                                <String fx:value="GRANDE-BRETAGNE"/>
+                                <String fx:value="GUYENNE"/>
+                                <String fx:value="ILE-DE-FRANCE"/>
+                                <String fx:value="ILES ANGLO-NORMANDES"/>
+                                <String fx:value="ITALIE"/>
+                                <String fx:value="LANGUEDOC"/>
+                                <String fx:value="LIMOUSIN"/>
+                                <String fx:value="LORRAINE"/>
+                                <String fx:value="MAINE"/>
+                                <String fx:value="NIVERNAIS"/>
+                                <String fx:value="NORMANDIE"/>
+                                <String fx:value="ORLEANAIS-BLESOIS-PAYS CHARTRAIN"/>
+                                <String fx:value="PICARDIE"/>
+                                <String fx:value="PAYS NANTAIS ET VENDEEN"/>
+                                <String fx:value="PROVENCE"/>
+                                <String fx:value="PYRENEES CENTRALES"/>
+                                <String fx:value="PYRENEES OCCIDENTALES"/>
+                                <String fx:value="PYRENEES ORIENTALES"/>
+                                <String fx:value="QUERCY-ROUERGUE"/>
+                                <String fx:value="SUISSE"/>
+                                <String fx:value="TOURAINE"/>
+                                <String fx:value="VAUCLUSE"/>
+                                <String fx:value="VOSGES"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
                     <HBox styleClass="separator">
                         <Label styleClass="label-invisible" text="fill"/>
                     </HBox>
@@ -110,15 +143,16 @@
             <Label styleClass="left-label" text="Intensité macrosismique"/>
             <Slider fx:id="slider" showTickLabels="true" max="12"/>
 
+            <Button fx:id="start" styleClass="right-menu-button" text="Rechercher"/>
+
         </VBox>
     </left>
 
     <right>
-        <VBox fx:id="menuDeroulant" styleClass="right-menu">
-            <Button styleClass="right-menu-button" text="ACCUEIL"/>
-            <Button styleClass="right-menu-button" text="STATISTIQUES"/>
-            <Button styleClass="right-menu-button" text="CARTE"/>
-        </VBox>
+            <VBox fx:id="menuDeroulant" styleClass="right-menu">
+                <Button fx:id="btnSismograph" styleClass="right-menu-button" text="STATISTIQUES"/>
+                <Button fx:id="btnQuakescope" styleClass="right-menu-button" text="CARTE"/>
+            </VBox>
     </right>
 
 
