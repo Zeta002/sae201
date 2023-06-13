@@ -51,10 +51,8 @@ public class AppController {
             // Effectue l'action en fonction de l'ID du bouton
             switch (id) {
 
-                case "btnSismograph" -> switchToDashboard(event);
+                case "btnDashboard" -> switchToDashboard(event);
                 case "btnQuakescope" -> switchToSismograph(event);
-
-                // Ajoute d'autres cas pour d'autres éléments si nécessaire
             }
         }
 
@@ -68,18 +66,12 @@ public class AppController {
         }
     }
 
+
     /**
      * Initialise ce qui doit être lancé au chargement de la classe.
      */
     public void initialize() {
         showMenu();
-        createBindings();
-    }
-
-    /**
-     * Crée les bindings nécessaires pour le bon fonctionnement de l'application.
-     */
-    private void createBindings() {
     }
 
 /*
@@ -107,6 +99,7 @@ public class AppController {
      * Change la page FXML en la page du tableau de bord.
      */
     private void switchToDashboard(ActionEvent event) throws IOException {
+        System.out.println("Test");
         root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

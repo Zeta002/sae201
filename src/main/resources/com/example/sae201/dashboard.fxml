@@ -6,10 +6,30 @@
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import java.net.URL?>
 <BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.sae201.EarthquakeDashboardController">
+
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+
     <top>
-        <HBox style="-fx-background-color: #226D68;" prefHeight="50"/>
+        <HBox alignment="CENTER" styleClass="top-element">
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="QUAKESCOPE" styleClass="title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <ToggleButton fx:id="btnMenuDeroulant" onAction="#handleEventHandler" styleClass="top-element" alignment="CENTER_RIGHT">
+                <graphic>
+                    <ImageView fitHeight="35" fitWidth="35">
+                        <Image url="@images/btn-menu-deroulant.png"/>
+                    </ImageView>
+                </graphic>
+            </ToggleButton>
+        </HBox>
     </top>
     <center>
         <VBox VBox.vgrow="ALWAYS">
@@ -37,4 +57,10 @@
             </BarChart>
         </VBox>
     </center>
+    <right>
+        <VBox fx:id="menuDeroulant" styleClass="right-menu">
+            <Button fx:id="btnDashboard" styleClass="right-menu-button" onAction="#handleEventHandler" text="STATISTIQUES"/>
+            <Button fx:id="btnQuakescope" styleClass="right-menu-button" onAction="#handleEventHandler" text="CARTE"/>
+        </VBox>
+    </right>
 </BorderPane>

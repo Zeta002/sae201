@@ -33,7 +33,6 @@
                     </ImageView>
                 </graphic>
             </ToggleButton>
-
         </HBox>
     </top>
 
@@ -150,8 +149,8 @@
 
     <right>
             <VBox fx:id="menuDeroulant" styleClass="right-menu">
-                <Button fx:id="btnSismograph" styleClass="right-menu-button" text="STATISTIQUES"/>
-                <Button fx:id="btnQuakescope" styleClass="right-menu-button" text="CARTE"/>
+                <Button fx:id="btnDashboard" styleClass="right-menu-button" onAction="#handleEventHandler" text="STATISTIQUES"/>
+                <Button fx:id="btnQuakescope" styleClass="right-menu-button" onAction="#handleEventHandler" text="CARTE"/>
             </VBox>
     </right>
 

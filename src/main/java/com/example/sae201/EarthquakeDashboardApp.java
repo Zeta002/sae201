@@ -16,6 +16,7 @@ public class EarthquakeDashboardApp extends Application {
 
         primaryStage.setTitle("Earthquake Dashboard");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setFullScreen(true);
         primaryStage.show();
     }
 
