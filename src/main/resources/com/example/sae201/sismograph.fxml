@@ -14,6 +14,7 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.ToggleButton?>
 
+<?import com.gluonhq.maps.MapView?>
 <BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.sae201.AppController">
 
     <stylesheets>
@@ -157,7 +158,7 @@
 
     <center>
         <VBox styleClass="center-element">
-            <Label styleClass="center-element" text="LE CENTRE"/>
+            <MapView fx:id="map" styleClass="center-element" zoom="5"/>
         </VBox>
     </center>
 
